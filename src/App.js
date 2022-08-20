@@ -69,7 +69,7 @@ const App = () => {
         </a>
         . Coded by{' '}
         <a className='text-[#6348FE]' href='#'>
-          Adefeso Qudus A.
+          Q.A.
         </a>
         .
       </div>
