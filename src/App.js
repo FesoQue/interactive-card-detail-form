@@ -1,25 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import CardDetailsForm from './components/CardDetailsForm';
+import CardDetail from './components/CardDetail';
 
-function App() {
+const App = () => {
+  const [cardInfo, setCardInfo] = useState({
+    cc_name: '',
+    cc_number: '',
+    cc_month: '',
+    cc_year: '',
+    cvv: '',
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSuccessful, setIsSuccessful] = useState(false);
+
+  const handleOnChange = (e) => {
+    const value = e.target.value;
+    setCardInfo({ ...cardInfo, [e.target.name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    if (
+      cardInfo.cc_name !== '' &&
+      cardInfo.cc_number !== '' &&
+      cardInfo.cc_number.length === 19 &&
+      cardInfo.cc_month !== '' &&
+      cardInfo.cc_year !== '' &&
+      cardInfo.cvv !== '' &&
+      cardInfo.cvv.length === 3
+    ) {
+      setIsSuccessful(true);
+    }
+  };
+
+  setTimeout(() => {
+    setIsSubmitted(false);
+  }, 4000);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div className='sm:flex sm:flex-col h-[100vh] items-center justify-center '>
+      <div
+        className='sm:flex sm:h-[80vh] items-center max-w-[900px] sm:mx-auto'
+        id='card-wrapper'
+      >
+        <div className='mb-[7rem] sm:mb-[0] sm:h-[100%]  sm:mx-auto'>
+          <CardDetail cardInfo={cardInfo} />
+        </div>
+        <div className='sm:h-[100%] flex items-center sm:pl-[2rem] md:pl-[7rem] xl:pl-[11rem]'>
+          <CardDetailsForm
+            cardInfo={cardInfo}
+            handleOnChange={handleOnChange}
+            handleSubmit={handleSubmit}
+            isSubmitted={isSubmitted}
+            isSuccessful={isSuccessful}
+            setIsSuccessful={setIsSuccessful}
+          />
+        </div>
+      </div>
+      <div className='mt-8'>
+        Challenge by{' '}
+        <a href='https://www.frontendmentor.io?ref=challenge' target='_blank'>
+          Frontend Mentor
         </a>
-      </header>
+        . Coded by <a href='#'>Adefeso Qudus A.</a>.
+      </div>
     </div>
   );
-}
+};
 
 export default App;
