@@ -41,7 +41,7 @@ const App = () => {
   return (
     <div className='sm:flex sm:flex-col sm:h-[100vh] items-center justify-center '>
       <div
-        className='sm:flex sm:h-[80vh] items-center max-w-[900px] sm:mx-auto sm:rounded-md'
+        className='sm:flex sm:flex-row sm:h-[80vh] items-center max-w-[900px] sm:mx-auto sm:rounded-md'
         id='card-wrapper'
       >
         <div className='mb-[7rem] sm:mb-[0] sm:h-[100%]  sm:mx-auto'>

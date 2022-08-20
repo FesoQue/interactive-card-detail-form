@@ -5,7 +5,7 @@ import bg_card_front from '../images/bg-card-front.png';
 
 const CardDetail = ({ cardInfo }) => {
   return (
-    <div className='flex justify-center bg-mobile-bg sm:bg-desktop-bg  h-[42vh] bg-cover relative sm:h-[100%]  '>
+    <div className='flex justify-center bg-mobile-bg sm:bg-desktop-bg  h-[17rem] bg-cover relative sm:h-[100%]  '>
       <div className=''>
         <div className='relative top-[30px] w-[320px] right-[-5px] sm:top-[19rem] sm:right-[-2rem] md:right-[-4rem] xl:right-[-8rem] md:shadow-2xl '>
           <img
