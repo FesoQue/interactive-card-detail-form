@@ -39,15 +39,15 @@ const App = () => {
   }, 4000);
 
   return (
-    <div className='sm:flex sm:flex-col h-[100vh] items-center justify-center '>
+    <div className='sm:flex sm:flex-col sm:h-[100vh] items-center justify-center '>
       <div
-        className='sm:flex sm:h-[80vh] items-center max-w-[900px] sm:mx-auto'
+        className='sm:flex sm:h-[80vh] items-center max-w-[900px] sm:mx-auto rounded-md'
         id='card-wrapper'
       >
         <div className='mb-[7rem] sm:mb-[0] sm:h-[100%]  sm:mx-auto'>
           <CardDetail cardInfo={cardInfo} />
         </div>
-        <div className='sm:h-[100%] flex items-center sm:pl-[2rem] md:pl-[7rem] xl:pl-[11rem]'>
+        <div className='sm:h-[100%] sm:flex sm:items-center sm:pl-[2rem] md:pl-[7rem] xl:pl-[11rem]'>
           <CardDetailsForm
             cardInfo={cardInfo}
             handleOnChange={handleOnChange}
@@ -58,12 +58,20 @@ const App = () => {
           />
         </div>
       </div>
-      <div className='mt-8'>
+      <div className='mt-8 text-sm text-center'>
         Challenge by{' '}
-        <a href='https://www.frontendmentor.io?ref=challenge' target='_blank'>
+        <a
+          className='text-[#610595]'
+          href='https://www.frontendmentor.io?ref=challenge'
+          target='_blank'
+        >
           Frontend Mentor
         </a>
-        . Coded by <a href='#'>Adefeso Qudus A.</a>.
+        . Coded by{' '}
+        <a className='text-[#6348FE]' href='#'>
+          Adefeso Qudus A.
+        </a>
+        .
       </div>
     </div>
   );
