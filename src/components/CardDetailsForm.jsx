@@ -39,7 +39,7 @@ const CardDetailsForm = ({
   return (
     <div>
       {!isSuccessful ? (
-        <form onSubmit={handleSubmit} className='p-4' action=''>
+        <form onSubmit={handleSubmit} className='p-4'>
           <div className='mb-6 relative'>
             <label
               className='uppercase text-sm mb-2 block tracking-wider text-very-dark-violet'
